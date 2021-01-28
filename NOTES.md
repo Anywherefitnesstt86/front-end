@@ -18,6 +18,15 @@ import * as yup from 'yup';
 npx cypress open
 add to cypress.json folder
 
+ADD:
+
+{
+  "viewportWidth": 600,
+  "viewportHeight": 600,
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "cypress/integration"
+}
+
 > React Router
 [x] npm install --save react-router
 import { Router, Route, Switch } from "react-router";
