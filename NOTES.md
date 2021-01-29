@@ -32,19 +32,24 @@ ADD:
 import { Router, Route, Switch } from "react-router";
 
 ## Rhiannon
-[] NewUserForm.js - new user form 
+[x] NewUserForm.js - new user form 
 [] search classes - client uses
 
 ## Josh
 [] LoginForm.js - login form
+
+## Mona
 [] add / delete class form - instructor uses
+[] routes
+[] authentication
+[] landing / home page
 
 ## Components
 
 [x] TextInput.js
 [] ClassCard.js - card to display classes
 [] Header.js - Josh
-[] Footer.js - Footer
+[x] Footer.js - Rhiannon
 [] Classes.js - contain the class cards
 
 ## Routes
