@@ -86,7 +86,7 @@ function App() {
 
       {/* Route to Create New User Form */}
         {/* <Header/> */}
-        {/* <NewUserForm 
+        <NewUserForm 
           user={user} 
           setUser={setUser} 
           newUserFormValues={newUserFormValues} 
@@ -95,7 +95,7 @@ function App() {
           newUsersetFormErrors={setNewUserFormErrors} 
           newUserDisabled={newUserDisabled} 
           setNewUserDisabled={setNewUserDisabled} 
-          /> */}
+          />
 
       {/* Route to User Login Form  */}
 
