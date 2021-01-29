@@ -34,9 +34,12 @@ import { Router, Route, Switch } from "react-router";
 ## Rhiannon
 [x] NewUserForm.js - new user form 
 [] search classes - client uses
+[] ClassCard.js - card to display classes
+[] Classes.js - contain the class cards
 
 ## Josh
 [] LoginForm.js - login form
+[] Header.js 
 
 ## Mona
 [] add / delete class form - instructor uses
@@ -45,16 +48,14 @@ import { Router, Route, Switch } from "react-router";
 [] landing / home page
 
 ## Components
+[] Header.js 
+[x] Footer.js 
+[] ClassCard.js - card to display classes 
+[] Classes.js - contain the class cards 
 
 [x] TextInput.js
-[] ClassCard.js - card to display classes
-[] Header.js - Josh
-[x] Footer.js - Rhiannon
-[] Classes.js - contain the class cards
 
-## Routes
 
-[] Mona / Unit 3
 
 
 

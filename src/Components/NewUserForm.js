@@ -11,17 +11,16 @@ import { useHistory } from 'react-router-dom';
 const initialNewUserFormValues = {
   personName: '',
   email: '',
-  age: '',
+  isOverEighteen: false,
   password: '',
-  isInstructor: false,
+  isInstructor: false
 };
-
 const initialNewUserFormErrors = {
   personName: '',
   email: '',
-  age: '',
+  isOverEighteen: false,
   password: '',
-  isInstructor: '',
+  isInstructor: false
 };
 
 
