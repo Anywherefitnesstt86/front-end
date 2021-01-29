@@ -33,9 +33,9 @@ import { Router, Route, Switch } from "react-router";
 
 ## Rhiannon
 [x] NewUserForm.js - new user form 
-[] search classes - client uses
 [] ClassCard.js - card to display classes
 [] Classes.js - contain the class cards
+[] search classes - client uses
 
 ## Josh
 [] LoginForm.js - login form
