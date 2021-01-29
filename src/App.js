@@ -29,7 +29,7 @@ import Header from './Components/Header';
     {
       className: "Yoga On The Beach",
       classType: "Yoga",
-      classDate: new Date(1995, 11, 17),
+      classDate: "2021/10/30"
       startTime: "10:00am",
       duration: 1, // hours
       intensity: "low",
