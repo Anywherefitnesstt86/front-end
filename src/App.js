@@ -10,8 +10,9 @@ import NewUserForm from './Components/NewUserForm';
   const initialNewUserFormValues = {
     personName: '',
     email: '',
-    age: '',
+    age: '', // checkbox / false
     password: '',
+    isInstructor: false
   };
   const initialNewUserFormErrors = {
     personName: '',
@@ -26,6 +27,7 @@ import NewUserForm from './Components/NewUserForm';
     {
       className: "Yoga On The Beach",
       classType: "Yoga",
+      classDate: "Monday",
       startTime: "10:00am",
       duration: 1, // hours
       intensity: "low",

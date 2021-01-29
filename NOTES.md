@@ -37,7 +37,12 @@ import { Router, Route, Switch } from "react-router";
 
 ## Josh
 [] LoginForm.js - login form
+
+## Mona
 [] add / delete class form - instructor uses
+[] routes
+[] authentication
+[] landing / home page
 
 ## Components
 
