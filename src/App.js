@@ -100,14 +100,14 @@ function App() {
       {/* Route to User Login Form  */}
 
       {/* Route to view Classes  */}
-      {/* <Classes
+      <Classes
         allClasses={allClasses}
         setClasses={setAllClasses}
         filteredClasses={filteredClasses}
         setFilteredClasses={setFilteredClasses}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-      /> */}
+      />
 
       {/* Route to view Class  */}
 

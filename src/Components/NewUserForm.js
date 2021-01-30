@@ -143,7 +143,7 @@ function NewUserForm (props) {
               <div>{newUserFormErrors.password}</div>
 
               <div className='newUserForm-radio'>
-              <input type="radio" name="isOverEighteen" onChange={inputChange} value={true}/> Are you over 18 years of age?
+              <input type="radio" name="isOverEighteen" onChange={inputChange} value={true}/>Are you over 18 years of age?
               </div>
               <div>{newUserFormErrors.isOverEighteen}</div>
     
@@ -169,7 +169,7 @@ function NewUserForm (props) {
                       placeholder=" Instructor Code"
                       onChange={inputChange} 
                       value={newUserFormValues.authCode}
-                      label={"Instructor Code"}
+                      label={" "}
                     />
                 </div>
               : <br/> /* conditional rendering for instructor authorization code */  }

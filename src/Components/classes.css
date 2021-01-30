@@ -1,0 +1,41 @@
+.classes-background {
+  background-image: url('https://cdn.pixabay.com/photo/2017/03/04/14/00/yoga-2116093_1280.jpg');
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #777777;
+  height: 200vh;
+  width: 100vw;
+  display:flex;
+  justify-content: center;
+}
+
+.classes-content-container {
+  height: 150vh;
+  width: 100vw;
+}
+.classes-title {
+  font-size: 44px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.search-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.classes-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  font-family: Roboto, sans-serif
+}
+.type-input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
