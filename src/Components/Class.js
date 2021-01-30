@@ -11,7 +11,13 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 310,
+    color: 'white',
+    background: 'black',
+    opacity: .9,
+    boxShadow: '0 0 25px red, 0 0 5px rgb(105, 7, 7)',
+    fontSize: 22,
+ 
   },
   bullet: {
     display: 'inline-block',
@@ -19,10 +25,13 @@ const useStyles = makeStyles({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+    fontSize: 22,
+    color: 'white',
   },
   pos: {
     marginBottom: 12,
+    fontSize: 22,
+    color: 'white'
   },
 }); // material UI styles
 
@@ -35,7 +44,7 @@ export default function Class (props) {
 
   return (
 
-    <Card className={classes.root} variant="outlined">
+    <Card  className={classes.root} variant="outlined">
     <CardContent>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
         {indivClass.classType}
@@ -56,7 +65,7 @@ export default function Class (props) {
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">Learn More</Button>
+      <Button size="small" style={{ color: 'white'}}>Learn More</Button>
     </CardActions>
   </Card>
 

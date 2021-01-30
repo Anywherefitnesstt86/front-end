@@ -64,9 +64,13 @@ export default function Classes (props) {
   return (
     <div className='classes-background'>
       <div className='classes-content-container'>
-      <h1 className='classes-title'>Classes</h1>
-        <div className='search-container'>
-          <SearchIcon style={{ color: 'white' }} fontSize="large"/>
+        
+        <div className='search-container'><br/>
+          <div className='classes-title'>          
+            <h1>Classes</h1>
+          </div>
+
+          <SearchIcon className='search-icon' style={{ color: 'white'}} fontSize="large"/>
           <TextInput
               type="text"
               placeholder=" Search for classes"
