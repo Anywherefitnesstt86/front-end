@@ -78,7 +78,7 @@
   }
 
   .classes-title {
-    font-size: 22px;
+    font-size: 20px;
     width: 85vw;
     text-align: center;
   }
@@ -86,7 +86,7 @@
   .search-container {
     box-sizing: border-box;
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
@@ -94,7 +94,15 @@
     padding-bottom: 20px;
   }
 
-  .classes-container {
-    height: 200vh;
+
+  input {
+    align-self: left;
   }
+
+  .classes-container {
+    height: auto;
+    justify-content: space-around;
+    /* border: green 3px solid; */
+  }
+
 }

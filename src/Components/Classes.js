@@ -70,7 +70,7 @@ export default function Classes (props) {
             <h1>Classes</h1>
           </div>
 
-          <SearchIcon style={{ color: 'white' }} fontSize="large"/>
+          <SearchIcon className='search-icon' style={{ color: 'white'}} fontSize="large"/>
           <TextInput
               type="text"
               placeholder=" Search for classes"
