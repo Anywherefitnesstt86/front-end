@@ -111,6 +111,9 @@ function NewUserForm (props) {
         
           <div className='newUserForm-container'>
           <form className='newUserForm' onSubmit={formSubmit}>
+              <div className='newUserForm-title'>
+                <h1 >New User Login</h1>
+              </div>
 
               <TextInput
                 type="text"

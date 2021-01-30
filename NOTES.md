@@ -61,10 +61,25 @@ import { Router, Route, Switch } from "react-router";
 
 
 
-22 pt font higher
+## Accessibillity
+> This website features fonts at 22px or higher when possible
 
 
+## Responsiveness Media Queries
+/* mobile  */
+@media only screen and (min-width: 480px) {
+}
 
+ /* tablet */
+@media only screen and (min-width: 768px) {
+}
 
+/* desktop */
+@media only screen and (min-width: 992px) {
+}
+
+/* wide-screen */
+@media only screen and (min-width: 1280px) {
+}
 
 
