@@ -1,23 +1,64 @@
 import React from 'react';
+import './classes.css';
+
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+}); // material UI styles
 
 export default function Class (props) {
   const { indivClass } = props;
-    // console.log(props)
+
+  // material UI code
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <div>
-      
-          <h3>{indivClass.className}</h3>
-          <p>{indivClass.classType}</p>
-          <p>{indivClass.classDate}</p>
-          <p>Start time: {indivClass.startTime}</p>
-          <p>Hours: {indivClass.duration}</p>
-          <p>Intensity: {indivClass.intensity}</p>
-          <p>Location: {indivClass.location}</p>
-          <p>Number of Students:{indivClass.numberOfStudents}</p>
-          <p>Max Limit:{indivClass.maxClassSize}</p>
-    </div>
+
+    <Card className={classes.root} variant="outlined">
+    <CardContent>
+      <Typography className={classes.title} color="textSecondary" gutterBottom>
+        {indivClass.classType}
+      </Typography>
+      <Typography variant="h5" component="h2">
+        {bull} {indivClass.className} {bull}
+      </Typography>
+      <Typography className={classes.pos} color="textSecondary"><br/>
+    
+      {indivClass.classDate}
+      </Typography>
+      <Typography variant="body2" component="p">
+        {indivClass.intensity} intensity<br/>
+        Location: {indivClass.location}<br/>
+        {indivClass.duration} hour<br/>
+        starts at {indivClass.startTime}<br/>
+        {indivClass.numberOfStudents}/{indivClass.maxClassSize} students signed up<br/>
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <Button size="small">Learn More</Button>
+    </CardActions>
+  </Card>
+
   )
 };

@@ -1,10 +1,10 @@
 Input {
   margin: 1rem;
+  font-size: 22px;
 }
 
 .background-newUserForm {
-  /* background-color: black; */
-  height: 100vh;
+  height: 150vh;
   width: 100vw;
   background-image: url('https://cdn.pixabay.com/photo/2017/08/06/09/50/people-2590796_1280.jpg');
   background-attachment: fixed;
@@ -12,6 +12,7 @@ Input {
   background-position: center;
   background-size: cover;
   padding-top: 10vh;
+  background-color: #777777;
 }
 
 .newUserForm-container {
@@ -21,6 +22,7 @@ Input {
   height: 100vh;
   width: 100vw;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
   /* border: pink solid 5px;  */
 }
 
@@ -39,7 +41,6 @@ Input {
 
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
   margin-bottom: 10%;
   /* border: red solid 5px; */
 }
@@ -51,8 +52,7 @@ Input {
 }
 
 .newUserForm-radio {
-  disply: inline-block;
-  margin-right: 1rem;
+  display: inline-block;
 }
 
 #submitBtn {
@@ -60,6 +60,7 @@ Input {
   display: block;
   height: 2rem;
   width: 7rem;
+  font-size: 22px;
 }
 
 /* The switch - the box around the slider */
@@ -73,15 +74,16 @@ Input {
 .slider-container {
   display: flex;
   flex-flow: row wrap;
-  display: inline-block;
   margin-bottom: 4rem;
   justify-content: left;
 }
 
 .slider-text {
   margin: 10px;
+  margin-left: 20px;
   color: rgb(78, 81, 90);
   font-size: 1rem;
+  font-size: 22px;
 }
 
 .switch {

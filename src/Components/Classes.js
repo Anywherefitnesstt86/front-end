@@ -1,6 +1,9 @@
 import React from 'react';
+import './classes.css';
 import TextInput from './TextInput.js';
 import Class from './Class.js';
+import SearchIcon from '@material-ui/icons/Search';
+
 
 
 export default function Classes (props) {
@@ -59,24 +62,28 @@ export default function Classes (props) {
 
 
   return (
-    <div className="classes-container">
+    <div className='classes-background'>
+      <div className='classes-content-container'>
+      <h1 className='classes-title'>Classes</h1>
+        <div className='search-container'>
+          <SearchIcon style={{ color: 'white' }} fontSize="large"/>
+          <TextInput
+              type="text"
+              placeholder=" Search for classes"
+              onChange={searchChangeHandler} 
+              label={""}
+          />
+        </div>
+        
 
-      <TextInput
-          type="text"
-          placeholder=" Search for classes"
-          onChange={searchChangeHandler} 
-          label={"🔎"}
-      />
-      <h3>Classes</h3>
-
-    {
-      filteredClasses.map(indivClass => {
-        return <Class key={indivClass.id} indivClass={indivClass} />
-      })
-    }
-  
-
+        <div className="classes-container">
+            {
+              filteredClasses.map(indivClass => {
+                return <Class key={indivClass.id} indivClass={indivClass} />
+              })
+            }
+        </div>
+      </div>
     </div>
-
   )
 }

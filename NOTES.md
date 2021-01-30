@@ -31,6 +31,10 @@ ADD:
 [x] npm install --save react-router
 import { Router, Route, Switch } from "react-router";
 
+> Material UI
+[x] npm install @material-ui/core
+[x] npm install @material-ui/icons
+
 ## Rhiannon
 [x] NewUserForm.js - new user form 
 [x] ClassCard.js - card to display classes
@@ -56,6 +60,8 @@ import { Router, Route, Switch } from "react-router";
 [x] TextInput.js
 
 
+
+22 pt font higher
 
 
 
