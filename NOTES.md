@@ -49,7 +49,7 @@ import { Router, Route, Switch } from "react-router";
 [] add / delete class form - instructor uses
 [] routes
 [] authentication
-[] landing / home page
+[x] landing / home page
 
 ## Components
 [] Header.js 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './classes.css';
+import { useHistory } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
     opacity: .9,
     boxShadow: '0 0 25px red, 0 0 5px rgb(105, 7, 7)',
     fontSize: 22,
- 
+
   },
   bullet: {
     display: 'inline-block',
@@ -42,9 +43,12 @@ export default function Class (props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
+  // enables indiv class card onClick --> routes to indiv class card
+  const history = useHistory();
+
   return (
 
-    <Card  className={classes.root} variant="outlined">
+    <Card  className={classes.root} variant="outlined" onClick={(evt) => history.push(`/classes/${indivClass.id}`)} >
     <CardContent>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
         {indivClass.classType}

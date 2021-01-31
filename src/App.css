@@ -1,0 +1,15 @@
+
+
+
+/* -----------------footer--------------- */
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: black;
+  color: white;
+}
+
+.footer-copyright {
+  font-size: 22px;
+  margin-right: 2rem;
+}

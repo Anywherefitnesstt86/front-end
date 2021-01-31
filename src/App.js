@@ -2,9 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
-// import Header from './Components/Header';
 import Classes from './Components/Classes';
 import Class from './Components/Class';
+// import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 
   // -------------------------- INITIAL STATES ------------------------

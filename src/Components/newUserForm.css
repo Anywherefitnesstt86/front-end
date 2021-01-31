@@ -155,13 +155,13 @@ input:checked + .slider:before {
   .newUserForm {
     width: 90vw;
     text-align: left;
-    height: 90vh;
+    height: 110vh;
     margin-top: 20%;
     padding: 1;
   }
 
   .background-newUserForm {
-    height: 110vh;
+    height: 130vh;
   }
 
 }
