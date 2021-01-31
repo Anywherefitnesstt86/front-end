@@ -5,6 +5,7 @@ import NewUserForm from './Components/NewUserForm';
 // import Header from './Components/Header';
 import Classes from './Components/Classes';
 import Class from './Components/Class';
+import LandingPage from './Components/LandingPage';
 
 
   // -------------------------- INITIAL STATES ------------------------
@@ -83,7 +84,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <LandingPage />
       {/* Route to Create New User Form */}
         {/* <Header/> */}
         <NewUserForm 

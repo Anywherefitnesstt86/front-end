@@ -29,7 +29,7 @@ const initialNewUserFormErrors = {
 function NewUserForm (props) {
   const { user, setUser, newUserFormValues, setNewUserFormValues, newUserFormErrors, setNewUserFormErrors, newUserDisabled, setNewUserDisabled } = props
 
-  const history = useHistory();
+  const history = useHistory();  
 
   // -------------------- Helper Functions -----------------
 
