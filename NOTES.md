@@ -38,18 +38,23 @@ import { Router, Route, Switch } from "react-router";
 ## Rhiannon
 [x] NewUserForm.js - new user form 
 [x] ClassCard.js - card to display classes
-[x] Classes.js - contain the class cards
+[x] Classes.js - contain the class cards 
+    (axios get to populate classes states)
 [x] search classes - client uses
+[x] Footer.js component
+[x] TextInput component
+[x] Import / Add Material UI Card components
 
 ## Josh
 [] LoginForm.js - login form
-[] Header.js 
+[] Header.js component
 
 ## Mona
 [] add / delete class form - instructor uses
+    (axios post / delete)
 [] routes
 [] authentication
-[x] landing / home page
+[x] LandingPage.js component
 
 ## Components
 [] Header.js 
@@ -58,6 +63,7 @@ import { Router, Route, Switch } from "react-router";
 [x] Classes.js - contain the class cards 
 
 [x] TextInput.js
+[x] LandingPage.js
 
 
 

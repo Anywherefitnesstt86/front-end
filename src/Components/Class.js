@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     opacity: .9,
     boxShadow: '0 0 25px red, 0 0 5px rgb(105, 7, 7)',
     fontSize: 22,
-
+    margin: '10px',
   },
   bullet: {
     display: 'inline-block',
@@ -38,6 +38,8 @@ const useStyles = makeStyles({
 
 export default function Class (props) {
   const { indivClass } = props;
+  console.log("Props from class:", props);
+
 
   // material UI code
   const classes = useStyles();

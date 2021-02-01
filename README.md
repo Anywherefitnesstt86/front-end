@@ -25,21 +25,35 @@
 
 ## Front End Work
 
-  ## Rhiannon
-  [] NewUserForm.js - new user form 
-  [] ClassCard.js - card to display classes
-  [] Classes.js - contain the class cards
-  [] search classes - client uses
+## Rhiannon
+[] NewUserForm.js - new user form 
+[] ClassCard.js - card to display classes
+[] Classes.js - contain the class cards 
+    (axios get to populate classes states)
+[] search classes - client uses
+[] Footer.js component
+[] TextInput component
+[] Import / Add Material UI Card components
 
-  ## Josh
-  [] LoginForm.js - login form
-  [] Header.js 
+## Josh
+[] LoginForm.js - login form
+[] Header.js component
 
-  ## Mona
-  [] add / delete class form - instructor uses
-  [] routes
-  [] authentication
-  [] landing / home page
+## Mona
+[] add / delete class form - instructor uses
+    (axios post / delete)
+[] routes
+[] authentication
+[] LandingPage.js component
+
+## Components
+[] Header.js 
+[] Footer.js 
+[] ClassCard.js - card to display classes 
+[] Classes.js - contain the class cards 
+
+[] TextInput.js
+[] LandingPage.js
 
 ## ## Dependencies Installed
 
@@ -66,3 +80,6 @@ import { Router, Route, Switch } from "react-router";
 > Material UI
 [x] npm install @material-ui/core
 [x] npm install @material-ui/icons
+
+> Greensock
+[x] npm install gsap react-gsap

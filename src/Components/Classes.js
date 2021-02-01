@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './classes.css';
 import TextInput from './TextInput.js';
 import Class from './Class.js';
 import SearchIcon from '@material-ui/icons/Search';
+import axios from 'axios';
+import { gsap } from "gsap";
 
 
 
 export default function Classes (props) {
   const { allClasses, setAllClasses, filteredClasses, setFilteredClasses, searchTerm, setSearchTerm } = props;
   
+  // ------------ populate class data with backend data------------------
+ function getAllClasses() {
+    axios.get('https://pt-fitness.herokuapp.com/classes')
+      .then(res => {
+ 
+        console.log("All Classes ", res.data);
+        console.log("Successful res back from Axios, res.data: ", res.data);
+
+        setAllClasses(res.data)
+        setFilteredClasses(res.data)
+
+      })
+      .catch(err => {
+        console.log("Error: ", err)
+        // history.push(`/error`)
+        alert("There was an error in loading classes.")
+        debugger
+      })
+  } // populates classes state
+
 
   // ----------- Helper Function ---------------------
   const getFilteredClasses = (searchTerm) => {
@@ -57,8 +79,13 @@ export default function Classes (props) {
   };
   
   // -------------------- Side Effects -----------------
-
+  useEffect(() => {
+    getAllClasses();
+  }, []); // populates allClasses on browser reload
   
+  useEffect(() => {
+    gsap.to(".classes-content-container", {duration: 2, y: 30});
+  }, [".newUserForm-title"]);
 
 
   return (

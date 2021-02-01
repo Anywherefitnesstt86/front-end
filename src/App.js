@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
@@ -103,7 +102,7 @@ function App() {
       {/* Route to view Classes  */}
       <Classes
         allClasses={allClasses}
-        setClasses={setAllClasses}
+        setAllClasses={setAllClasses}
         filteredClasses={filteredClasses}
         setFilteredClasses={setFilteredClasses}
         searchTerm={searchTerm}
