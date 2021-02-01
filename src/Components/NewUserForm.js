@@ -9,6 +9,8 @@ import './newUserForm.css';
 // import Header from './Header';
 // import Footer from './Footer';
 
+import { gsap } from "gsap";
+
 
 const initialNewUserFormValues = {
   personName: '',
@@ -34,20 +36,21 @@ function NewUserForm (props) {
   // -------------------- Helper Functions -----------------
 
   const postNewUser = newUser => {
-    axios.post('https://pt-fitness.herokuapp.com/', newUser)
+    axios.post('https://pt-fitness.herokuapp.com/login', newUser)
       .then(res => {
         setUser(res.data)
         console.log("New User ", res.data);
         console.log("Successful res back from Axios, res.data: ", res.data);
 
         setNewUserFormValues(initialNewUserFormValues); // reset form
-
-        history.push(`/`); // route to home page
+        alert("Congratulations!  You have logged in!")
+        // history.push(`/`); // route to home page
 
       })
       .catch(err => {
         console.log("Error: ", err)
-        history.push(`/error`)
+        alert("Oh no!  There was an error when logging in.  Please try again.")
+        // history.push(`/error`)
         debugger
       })
   } // posts and resets form
@@ -87,7 +90,7 @@ function NewUserForm (props) {
       }
 
       console.log("new user: ", newUser)
-      // postNewUser(newUser) // post new user using helper function postNewUser
+      postNewUser(newUser) // post new user using helper function postNewUser
 
       // history.push(`/`); // back to home page
   };
@@ -103,6 +106,11 @@ function NewUserForm (props) {
   //   console.log("The form Errors have changed", newUserFormErrors)
   // }, [newUserFormErrors]);
 
+  useEffect(() => {
+    gsap.to(".newUserForm-container", {duration: 2, y: 30});
+  }, [".newUserForm-title"]);
+
+  // gsap.to(".background-newUserForm", {duration: 2, x: 300});
 
   return (
     <>
