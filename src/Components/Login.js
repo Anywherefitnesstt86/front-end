@@ -62,9 +62,9 @@ function LoginForm (props) {
                     onChange = {inputChange}
                     value = {loginFormValues.email}
                     label = {"Email"}
-                    className = "type-input"
+                    className = "type-input-two"
                   />
-
+                  
                   <TextInput
                     type = "text"
                     name = "password"
@@ -72,7 +72,7 @@ function LoginForm (props) {
                     onChange = {inputChange}
                     value = {loginFormValues.password}
                     label = {"Password"}
-                    className = "type-input"
+                    className = "type-input-two"
                   />
                   <br/>
                   <br/>

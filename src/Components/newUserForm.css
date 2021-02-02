@@ -1,7 +1,6 @@
 Input {
   margin: 1rem;
   font-size: 22px;
-  
 }
 
 .background-newUserForm {
@@ -31,7 +30,7 @@ Input {
 .newUserForm {
   box-sizing: border-box;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   width: 70vw;
   text-align: left;
   background-color: black;
