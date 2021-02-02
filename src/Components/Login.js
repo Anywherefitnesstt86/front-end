@@ -1,7 +1,8 @@
 import React from 'react'
 import TextInput from './TextInput.js'
-// import Header from './Header';
-// import Footer from './Footer';
+import axios from 'axios';
+import Header from './Header';
+import Footer from './Footer';
 const initialloginFormValues = {
     email: '',
     password: '',
