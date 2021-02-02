@@ -46,8 +46,8 @@ import { Router, Route, Switch } from "react-router";
 [x] Import / Add Material UI Card components
 
 ## Josh
-[] LoginForm.js - login form
-[] Header.js component
+[x] LoginForm.js - login form
+[x] Header.js component
 
 ## Mona
 [] add / delete class form - instructor uses
@@ -57,7 +57,7 @@ import { Router, Route, Switch } from "react-router";
 [x] LandingPage.js component
 
 ## Components
-[] Header.js 
+[x] Header.js 
 [x] Footer.js 
 [x] ClassCard.js - card to display classes 
 [x] Classes.js - contain the class cards 
