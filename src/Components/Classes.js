@@ -114,7 +114,8 @@ export default function Classes (props) {
         <div className="classes-container">
             {
               filteredClasses.map(indivClass => {
-                return <Class indivClass={indivClass} key={indivClass.id}/>
+                const classKey = Math.random().toString(16).slice(2);
+                return <Class key={classKey} indivClass={indivClass} />
               })
             }
         </div>
