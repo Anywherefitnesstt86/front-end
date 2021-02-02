@@ -3,6 +3,8 @@ import TextInput from './TextInput.js'
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
+import { useHistory } from 'react-router-dom';
+
 const initialloginFormValues = {
     email: '',
     password: '',
@@ -28,6 +30,7 @@ function LoginForm (props) {
     const inputChange = (e) => {
         const { name, type, value, checked } = e.target;
         // console.log(`name: ${name}, value: ${value}`);
+        const inputValue = value;
         console.log("inputValue: ", inputValue)
         setLoginFormValues({ ...loginFormValues, [name]: inputValue });
     } 
@@ -51,7 +54,7 @@ function LoginForm (props) {
         name = "email"
         placeholder = "email address"
         onChange = {inputChange}
-        value = {userFormValues.email}
+        value = {loginFormValues.email}
         label = {"Email"}
       />
 
@@ -60,7 +63,7 @@ function LoginForm (props) {
         name = "password"
         placeholder = "password"
         onChange = {inputChange}
-        value = {userFormValues.password}
+        value = {loginFormValues.password}
         label = {"password"}
       />
       <br/>
