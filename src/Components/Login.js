@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
 import { useHistory } from 'react-router-dom';
+import './Login.css';
 
 const initialloginFormValues = {
     email: '',
@@ -48,29 +49,36 @@ function LoginForm (props) {
     
     return (
     <>
-      {/* {<Header/>} */}
-      <TextInput
-        type = "text"
-        name = "email"
-        placeholder = "email address"
-        onChange = {inputChange}
-        value = {loginFormValues.email}
-        label = {"Email"}
-      />
+      <Header/>
+        <div className='background-loginUserForm'>
+          <div className='loginUserForm-container'></div>
+              <form className='loginUserForm' onSubmit={onFormSubmit}>
+                  <h1 className='loginUserForm-title'>Login</h1><br/>
+                  <TextInput
+                    type = "text"
+                    name = "email"
+                    placeholder = "email address"
+                    onChange = {inputChange}
+                    value = {loginFormValues.email}
+                    label = {"Email"}
+                    className = "type-input"
+                  />
 
-      <TextInput
-        type = "text"
-        name = "password"
-        placeholder = "password"
-        onChange = {inputChange}
-        value = {loginFormValues.password}
-        label = {"password"}
-      />
-      <br/>
-      <br/>
-      <button  id="submitBtn" disabled={loginDisabled}>Submit</button> 
-    
-    {/* {<Footer/>} */}
+                  <TextInput
+                    type = "text"
+                    name = "password"
+                    placeholder = "password"
+                    onChange = {inputChange}
+                    value = {loginFormValues.password}
+                    label = {"Password"}
+                    className = "type-input"
+                  />
+                  <br/>
+                  <br/>
+                  <button  id="submitBtn2" disabled={loginDisabled}>Submit</button> 
+              </form>
+          </div>
+      <Footer/>
     </>
     )
 }
