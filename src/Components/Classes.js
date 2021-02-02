@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import './classes.css';
+import Header from './Header';
+import Footer from './Footer';
 import TextInput from './TextInput.js';
 import Class from './Class.js';
 import SearchIcon from '@material-ui/icons/Search';
@@ -89,6 +91,8 @@ export default function Classes (props) {
 
 
   return (
+    <>
+    <Header/>
     <div className='classes-background'>
       <div className='classes-content-container'>
         
@@ -116,5 +120,7 @@ export default function Classes (props) {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   )
 }

@@ -6,8 +6,8 @@ import { useHistory } from 'react-router-dom';
 import './newUserForm.css';
 
 // import schema from './formSchema.js';
-// import Header from './Header';
-// import Footer from './Footer';
+import Header from './Header';
+import Footer from './Footer';
 
 import { gsap } from "gsap";
 
@@ -114,7 +114,7 @@ function NewUserForm (props) {
 
   return (
     <>
-        {/* <Header/> */}
+        <Header/>
         <div className='background-newUserForm'>
         
           <div className='newUserForm-container'>
@@ -194,7 +194,7 @@ function NewUserForm (props) {
           </div>
           </div>
       
-        {/* <Footer/> */}
+        <Footer/>
 
     </>
   )
