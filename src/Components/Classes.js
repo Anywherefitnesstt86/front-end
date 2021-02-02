@@ -83,7 +83,7 @@ export default function Classes (props) {
   // -------------------- Side Effects -----------------
   useEffect(() => {
     getAllClasses();
-  }, []); // populates allClasses on browser reload
+  }); // populates allClasses on browser reload
   
   useEffect(() => {
     gsap.to(".classes-content-container", {duration: 2, y: 30});
