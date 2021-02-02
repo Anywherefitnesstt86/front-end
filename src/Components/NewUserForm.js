@@ -3,25 +3,28 @@ import TextInput from './TextInput.js';
 import axios from 'axios';
 import * as yup from 'yup';
 import { useHistory } from 'react-router-dom';
+import './newUserForm.css';
+
 // import schema from './formSchema.js';
 // import Header from './Header';
 // import Footer from './Footer';
+
+import { gsap } from "gsap";
 
 
 const initialNewUserFormValues = {
   personName: '',
   email: '',
-  age: '',
+  isOverEighteen: false,
   password: '',
-  isInstructor: false,
+  isInstructor: false
 };
-
 const initialNewUserFormErrors = {
   personName: '',
   email: '',
-  age: '',
+  isOverEighteen: '',
   password: '',
-  isInstructor: '',
+  isInstructor: ''
 };
 
 
@@ -33,20 +36,21 @@ function NewUserForm (props) {
   // -------------------- Helper Functions -----------------
 
   const postNewUser = newUser => {
-    axios.post('https://pt-fitness.herokuapp.com/', newUser)
+    axios.post('https://pt-fitness.herokuapp.com/login', newUser)
       .then(res => {
         setUser(res.data)
         console.log("New User ", res.data);
         console.log("Successful res back from Axios, res.data: ", res.data);
 
         setNewUserFormValues(initialNewUserFormValues); // reset form
-
-        history.push(`/`); // route to home page
+        alert("Congratulations!  You have logged in!")
+        // history.push(`/`); // route to home page
 
       })
       .catch(err => {
         console.log("Error: ", err)
-        history.push(`/error`)
+        alert("Oh no!  There was an error when logging in.  Please try again.")
+        // history.push(`/error`)
         debugger
       })
   } // posts and resets form
@@ -65,7 +69,7 @@ function NewUserForm (props) {
 
   const inputChange = (e) => {
     const { name, type, value, checked } = e.target;
-    // console.log(`name: ${name}, value: ${value}`);
+    console.log(`name: ${name}, value: ${value}`);
     const inputValue = type === 'checkbox' ? checked : value;  // option to include checkbox
     console.log("inputValue: ", inputValue)
     // validate(name, inputValue);
@@ -80,12 +84,13 @@ function NewUserForm (props) {
       const newUser = {
           personName: newUserFormValues.personName,
           email: newUserFormValues.email,
-          age: newUserFormValues.age,
+          isOverEighteen: newUserFormValues.isOverEighteen,
           password: newUserFormValues.password,
+          isInstructor: newUserFormValues.isInstructor
       }
 
       console.log("new user: ", newUser)
-      // postNewUser(newUser) // post new user using helper function postNewUser
+      postNewUser(newUser) // post new user using helper function postNewUser
 
       // history.push(`/`); // back to home page
   };
@@ -97,69 +102,99 @@ function NewUserForm (props) {
     // console.log("disabled?")
     }, [newUserFormValues]); // Adjust the status of 'disabled" every time formValues changes
 
-  useEffect(() => {
-    console.log("The form Errors have changed", newUserFormErrors)
-  }, [newUserFormErrors]);
+  // useEffect(() => {
+  //   console.log("The form Errors have changed", newUserFormErrors)
+  // }, [newUserFormErrors]);
 
+  useEffect(() => {
+    gsap.to(".newUserForm-container", {duration: 2, y: 30});
+  }, [".newUserForm-title"]);
+
+  // gsap.to(".background-newUserForm", {duration: 2, x: 300});
 
   return (
     <>
         {/* <Header/> */}
+        <div className='background-newUserForm'>
+        
+          <div className='newUserForm-container'>
+          <form className='newUserForm' onSubmit={formSubmit}>
+              <div className='newUserForm-title'>
+                <h1 >New User Login</h1>
+              </div>
 
-        <TextInput
-          type="text"
-          name="personName"
-          placeholder=" add your name here "
-          onChange={inputChange} 
-          value={newUserFormValues.personName}
-          label={"Name"}
-        />
-        <div>{newUserFormErrors.personName}</div>
+              <TextInput
+                type="text"
+                name="personName"
+                placeholder=" add your name here "
+                onChange={inputChange} 
+                value={newUserFormValues.personName}
+                label={"Name"}
+              />
+              <div>{newUserFormErrors.personName}</div>
 
-        <TextInput
-          type="text"
-          name="email"
-          placeholder=" email address "
-          onChange={inputChange} 
-          value={newUserFormValues.email}
-          label={"Email"}
-        />
-        <div>{newUserFormErrors.email}</div>
+              <TextInput
+                type="text"
+                name="email"
+                placeholder=" email address "
+                onChange={inputChange} 
+                value={newUserFormValues.email}
+                label={"Email"}
+              />
+              <div>{newUserFormErrors.email}</div>
 
-        <TextInput
-          type="text"
-          name="age"
-          placeholder=" enter your age "
-          onChange={inputChange} 
-          value={newUserFormValues.age}
-          label={"Age"}
-        />
-        <div>{newUserFormErrors.age}</div>
+              <TextInput
+                type="text"
+                name="password"
+                placeholder=" enter new password "
+                onChange={inputChange} 
+                value={newUserFormValues.password}
+                label={"Password"}
+              />
+              <div>{newUserFormErrors.password}</div>
 
-        <TextInput
-          type="text"
-          name="password"
-          placeholder=" enter new password "
-          onChange={inputChange} 
-          value={newUserFormValues.password}
-          label={"New Password"}
-        />
-        <div>{newUserFormErrors.password}</div>
+              <div className='newUserForm-radio'>
+              <input type="radio" name="isOverEighteen" onChange={inputChange} value={true}/>Are you over 18 years of age?
+              </div>
+              <div>{newUserFormErrors.isOverEighteen}</div>
+    
 
-        <p>If you are signing up as an instructor, you should have received an instructor code in an email.</p>
-        <TextInput
-          type="text"
-          name="isInstructor"
-          placeholder=" Instructor Code"
-          onChange={inputChange} 
-          value={newUserFormValues.isInstructor}
-          label={"Instructor Code"}
-        />
-        <br/>
-        <br/>
-        <button  id="submitBtn" disabled={newUserDisabled}>Submit</button> 
+              <div className='newUserForm-slider'>
+                  <div className="slider-container">
+                  <label className="switch">
+                    <input id="isInstructorInput" type="checkbox" name="isInstructor"
+                    checked={newUserFormValues.isInstructor} onChange={inputChange}/> 
+                    <span className="slider"></span><br/>
+                  </label>
+                  <p className="slider-text">Are you an instructor?</p>
+                  
+                  </div>
+              </div>
 
-      {/* <Footer/> */}
+              {newUserFormValues.isInstructor ? 
+                <div>
+                    <p>Welcome! You should have received an instructor code by email.  Please enter it below.</p>
+                    <TextInput
+                      type="text"
+                      name="authCode"
+                      placeholder=" Instructor Code"
+                      onChange={inputChange} 
+                      value={newUserFormValues.authCode}
+                      label={" "}
+                    />
+                </div>
+              : <br/> /* conditional rendering for instructor authorization code */  }
+
+
+              <br/>
+              <br/>
+              <button  id="submitBtn" newUserDisabled={newUserDisabled}>Submit</button> 
+
+          </form>
+          </div>
+          </div>
+      
+        {/* <Footer/> */}
 
     </>
   )

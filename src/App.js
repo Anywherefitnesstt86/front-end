@@ -1,8 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
 import LoginForm from './Components/Login';
+import Classes from './Components/Classes';
+import Class from './Components/Class';
+// import Header from './Components/Header';
+import Footer from './Components/Footer';
+
 
 
   // -------------------------- INITIAL STATES ------------------------
@@ -11,15 +15,16 @@ import LoginForm from './Components/Login';
   const initialNewUserFormValues = {
     personName: '',
     email: '',
-    age: '', // checkbox / false
+    isOverEighteen: false,
     password: '',
     isInstructor: false
   };
   const initialNewUserFormErrors = {
     personName: '',
     email: '',
-    age: '',
+    isOverEighteen: false,
     password: '',
+    isInstructor: false
   };
   const initialNewUserDisabled = false; // change back to true after testing
 
@@ -28,13 +33,37 @@ import LoginForm from './Components/Login';
     {
       className: "Yoga On The Beach",
       classType: "Yoga",
-      classDate: "Monday",
+      classDate: "2021/10/30",
       startTime: "10:00am",
       duration: 1, // hours
       intensity: "low",
       location: "Public Beach",
       numberOfStudents: 8, 
       maxClassSize: 10
+    },
+    {
+      className: "Strong Men",
+      classType: "Weights",
+      classDate: "2021/10/31",
+      startTime: "9:00am",
+      duration: 1, // hours
+      intensity: "high",
+      location: "Anywhere",
+      numberOfStudents: 10, 
+      maxClassSize: 10
+    } 
+  ]
+  const initialClassesErrors = [
+    {
+      className: "",
+      classType: "",
+      classDate: "",
+      startTime: "",
+      duration: "", 
+      intensity: "",
+      location: "",
+      numberOfStudents: "", 
+      maxClassSize: ""
     } 
   ]
 
@@ -50,14 +79,15 @@ function App() {
   const [loginFormErrors, setLoginFormErrors] = useState({}); // errors, mechanism for reset
   const [loginDisabled, setLoginDisabled] = useState({}) // for button or toggle
   // -------- States for Classes.js & Search Functionality ----------
-  const [ classes, setClasses ] = useState(initialClassesValues);
+  const [ allClasses, setAllClasses ] = useState(initialClassesValues);
+  const [ filteredClasses, setFilteredClasses ] = useState(initialClassesValues);
   const [ searchTerm, setSearchTerm ] = useState('');
 
   return (
     <div className="App">
 
       {/* Route to Create New User Form */}
-
+        {/* <Header/> */}
         <NewUserForm 
           user={user} 
           setUser={setUser} 
@@ -81,6 +111,14 @@ function App() {
           setLoginDisabled={setLoginDisabled}
         />
       {/* Route to view Classes  */}
+      <Classes
+        allClasses={allClasses}
+        setAllClasses={setAllClasses}
+        filteredClasses={filteredClasses}
+        setFilteredClasses={setFilteredClasses}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
 
       {/* Route to view Class  */}
 

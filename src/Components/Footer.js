@@ -9,9 +9,11 @@ const Footer = () => {
 
   return (
     <>
-            <p>© 2021 Anywhere Fitness. All Rights Reserved</p>
+      <div className='footer-container'>
+            <p className='footer-copyright'>© 2021 Anywhere Fitness. All Rights Reserved</p>
             
             {/* <button className="button" onClick={(evt) => history.push(`/help`)}>Help</button> */}
+      </div>
     </>
   );
 };
