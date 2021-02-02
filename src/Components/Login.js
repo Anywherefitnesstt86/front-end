@@ -68,7 +68,7 @@ function LoginForm (props) {
       />
       <br/>
       <br/>
-      <button  id="submitBtn" disabled={loginDisabled}>Submit</button> 
+      <button  id="submitButn" disabled={loginDisabled}>Submit</button> 
     
     {/* {<Footer/>} */}
     </>
