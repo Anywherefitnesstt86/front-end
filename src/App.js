@@ -1,10 +1,12 @@
 import './App.css';
 import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
+import LoginForm from './Components/Login';
 import Classes from './Components/Classes';
 import Class from './Components/Class';
 // import Header from './Components/Header';
 import Footer from './Components/Footer';
+
 
 
   // -------------------------- INITIAL STATES ------------------------
@@ -98,7 +100,16 @@ function App() {
           />
 
       {/* Route to User Login Form  */}
-
+        <LoginForm
+          user={user}
+          setUser={setUser}
+          loginFormValues={loginFormValues}
+          setLoginFormValues={setLoginFormValues}
+          loginFormErrors={loginFormErrors}
+          setLoginFormErrors={setLoginFormErrors}
+          loginDisabled={loginDisabled}
+          setLoginDisabled={setLoginDisabled}
+        />
       {/* Route to view Classes  */}
       <Classes
         allClasses={allClasses}
