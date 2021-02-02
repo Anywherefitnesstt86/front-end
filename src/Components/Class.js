@@ -38,8 +38,7 @@ const useStyles = makeStyles({
 
 export default function Class (props) {
   const { indivClass } = props;
-  console.log("Props from class:", props);
-
+  // console.log("Props from class:", props);
 
   // material UI code
   const classes = useStyles();
@@ -50,7 +49,7 @@ export default function Class (props) {
 
   return (
 
-    <Card  className={classes.root} variant="outlined" onClick={(evt) => history.push(`/classes/${indivClass.id}`)} >
+    <Card  className={classes.root} key={indivClass.id} variant="outlined" onClick={(evt) => history.push(`/classes/${indivClass.id}`)} >
     <CardContent>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
         {indivClass.classType}
