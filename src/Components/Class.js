@@ -46,10 +46,9 @@ export default function Class (props) {
 
   // enables indiv class card onClick --> routes to indiv class card
   const history = useHistory();
-
+//  const classKey = Math.random().toString(16).slice(2);
   return (
-
-    <Card  className={classes.root} key={indivClass.id} variant="outlined" onClick={(evt) => history.push(`/classes/${indivClass.id}`)} >
+    <Card  className={classes.root} variant="outlined" onClick={(evt) => history.push(`/classes/${indivClass.id}`)} >
     <CardContent>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
         {indivClass.classType}
