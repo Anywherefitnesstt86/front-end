@@ -33,6 +33,7 @@ export default function Classes (props) {
   } // populates classes state
 
 
+
   // ----------- Helper Function ---------------------
   const getFilteredClasses = (searchTerm) => {
     // edge case if searchTerm is "", reset filteredClasses to allClasses
@@ -82,7 +83,7 @@ export default function Classes (props) {
   // -------------------- Side Effects -----------------
   useEffect(() => {
     getAllClasses();
-  },[allClasses]); // populates allClasses on browser reload
+  }, []); // populates allClasses on browser reload
   
   useEffect(() => {
     gsap.to(".classes-content-container", {duration: 2, y: 30});
