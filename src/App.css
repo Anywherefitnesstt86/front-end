@@ -1,6 +1,12 @@
 
 
 
+
+/* -----------------header--------------- */
+.header-title {
+  margin-left: 2rem;
+}
+
 /* -----------------footer--------------- */
 .footer-container {
   display: flex;

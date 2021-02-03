@@ -1,0 +1,104 @@
+Input {
+  margin: 1rem;
+  font-size: 22px;
+  
+}
+
+.background-loginUserForm {
+  height: 150vh;
+  width: 100vw;
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/01/22/41/pregnant-2568395_1280.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #777777;
+  padding-top: 7rem;
+}
+
+.newUserForm-container {
+  box-sizing: border-box;
+  display: flex;
+  /* flex-flow: column wrap; */
+  /* height: 100vh; */
+  /* width: 100%; */
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-size: 22px; */
+  /* border: pink solid 15px;  */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+}
+
+.loginUserForm {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  width: 70vw;
+  height: 70vh;
+  text-align: left;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 25px green, 0 0 5px rgb(16, 88, 7);
+  opacity: .9;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 10%; */
+  margin-bottom: 10%;
+  /* border: red solid 5px; */
+  /* justify-content: space-between; */
+}
+
+.loginUserForm-title {
+  display: inline-block;
+  width: 100%;
+}
+.type-input-two {
+  /* width: 100%; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#submitBtn2 {
+  align-self: flex-end;
+  display: block;
+  height: 2rem;
+  width: 7rem;
+  font-size: 22px;
+  margin-top: 1rem;
+}
+
+/* mobile  */
+@media only screen and (max-width: 480px) {
+
+  .loginUserForm {
+    width: 90vw;
+    text-align: left;
+    height: 110vh;
+    margin-top: 20%;
+    padding: 1;
+  }
+
+  .background-newUserForm {
+    height: 130vh;
+  }
+
+}
+
+  
+ /* tablet */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* desktop */
+@media only screen and (min-width: 992px) {
+
+}
+
+
+/* wide-screen */
+@media only screen and (min-width: 1280px) {
+
+}

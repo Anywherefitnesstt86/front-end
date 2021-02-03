@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
 import LoginForm from './Components/Login';
 import Classes from './Components/Classes';
-import Class from './Components/Class';
+// import Class from './Components/Class';
 // import Header from './Components/Header';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 
 
 
@@ -53,19 +53,19 @@ import Footer from './Components/Footer';
       maxClassSize: 10
     } 
   ]
-  const initialClassesErrors = [
-    {
-      className: "",
-      classType: "",
-      classDate: "",
-      startTime: "",
-      duration: "", 
-      intensity: "",
-      location: "",
-      numberOfStudents: "", 
-      maxClassSize: ""
-    } 
-  ]
+  // const initialClassesErrors = [
+  //   {
+  //     className: "",
+  //     classType: "",
+  //     classDate: "",
+  //     startTime: "",
+  //     duration: "", 
+  //     intensity: "",
+  //     location: "",
+  //     numberOfStudents: "", 
+  //     maxClassSize: ""
+  //   } 
+  // ]
 
 function App() {
   // --------------------------- STATES -------------------------------
@@ -87,7 +87,6 @@ function App() {
     <div className="App">
 
       {/* Route to Create New User Form */}
-        {/* <Header/> */}
         <NewUserForm 
           user={user} 
           setUser={setUser} 

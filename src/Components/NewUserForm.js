@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import TextInput from './TextInput.js';
 import axios from 'axios';
-import * as yup from 'yup';
-import { useHistory } from 'react-router-dom';
+// import * as yup from 'yup';
+// import { useHistory } from 'react-router-dom';
 import './newUserForm.css';
 
 // import schema from './formSchema.js';
-// import Header from './Header';
-// import Footer from './Footer';
+import Header from './Header';
+import Footer from './Footer';
 
 import { gsap } from "gsap";
 
@@ -19,19 +19,20 @@ const initialNewUserFormValues = {
   password: '',
   isInstructor: false
 };
-const initialNewUserFormErrors = {
-  personName: '',
-  email: '',
-  isOverEighteen: '',
-  password: '',
-  isInstructor: ''
-};
+// const initialNewUserFormErrors = {
+//   personName: '',
+//   email: '',
+//   isOverEighteen: '',
+//   password: '',
+//   isInstructor: ''
+// };
 
 
 function NewUserForm (props) {
-  const { user, setUser, newUserFormValues, setNewUserFormValues, newUserFormErrors, setNewUserFormErrors, newUserDisabled, setNewUserDisabled } = props
+  const { setUser, newUserFormValues, setNewUserFormValues, newUserFormErrors,newUserDisabled } = props
+  // take out of props: setNewUserFormErrors, setNewUserDisabled
 
-  const history = useHistory();
+  // const history = useHistory();
 
   // -------------------- Helper Functions -----------------
 
@@ -55,15 +56,15 @@ function NewUserForm (props) {
       })
   } // posts and resets form
 
-  const validate = (name, value) => {
-  console.log("validate: ", name, value)
-  // yup.reach(schema, name)
-  //   .validate(value)
-  //   .then(() => setNewUserFormErrors({ ...newUserFormErrors, [name]: ''}))
-  //   .catch(err => setNewUserFormErrors({ ...newUserFormErrors, [name]: err.errors[0] })) // pending schema
+  // const validate = (name, value) => {
+  // console.log("validate: ", name, value)
+  // // yup.reach(schema, name)
+  // //   .validate(value)
+  // //   .then(() => setNewUserFormErrors({ ...newUserFormErrors, [name]: ''}))
+  // //   .catch(err => setNewUserFormErrors({ ...newUserFormErrors, [name]: err.errors[0] })) // pending schema
 
-    console.log("passes form validation")
-  }; // run validation with yup
+  //   console.log("passes form validation")
+  // }; // run validation with yup
 
   // -------------------- Event Handlers -----------------
 
@@ -108,13 +109,11 @@ function NewUserForm (props) {
 
   useEffect(() => {
     gsap.to(".newUserForm-container", {duration: 2, y: 30});
-  }, [".newUserForm-title"]);
-
-  // gsap.to(".background-newUserForm", {duration: 2, x: 300});
+  }, []);
 
   return (
     <>
-        {/* <Header/> */}
+        <Header/>
         <div className='background-newUserForm'>
         
           <div className='newUserForm-container'>
@@ -188,13 +187,13 @@ function NewUserForm (props) {
 
               <br/>
               <br/>
-              <button  id="submitBtn" newUserDisabled={newUserDisabled}>Submit</button> 
+              <button  id="submitBtn" disabled={newUserDisabled}>Submit</button> 
 
           </form>
           </div>
           </div>
       
-        {/* <Footer/> */}
+        <Footer/>
 
     </>
   )
