@@ -13,24 +13,24 @@ export default function Classes (props) {
   const { allClasses, setAllClasses, filteredClasses, setFilteredClasses, setSearchTerm } = props;
   
   // ------------ populate class data with backend data------------------
- function getAllClasses() {
-    axios.get('https://pt-fitness.herokuapp.com/classes')
-      .then(res => {
+//  function getAllClasses() {
+//     axios.get('https://pt-fitness.herokuapp.com/classes')
+//       .then(res => {
  
-        // console.log("All Classes ", res.data);
-        // console.log("Successful res back from Axios, res.data: ", res.data);
+//         // console.log("All Classes ", res.data);
+//         // console.log("Successful res back from Axios, res.data: ", res.data);
 
-        setAllClasses(res.data)
-        setFilteredClasses(res.data)
+//         setAllClasses(res.data)
+//         setFilteredClasses(res.data)
 
-      })
-      .catch(err => {
-        console.log("Error: ", err)
-        // history.push(`/error`)
-       alert("There was an error in loading classes.")
-       // debugger
-      })
-  } // populates classes state
+//       })
+//       .catch(err => {
+//         console.log("Error: ", err)
+//         // history.push(`/error`)
+//        alert("There was an error in loading classes.")
+//        // debugger
+//       })
+//   } // populates classes state
 
 
 
@@ -79,11 +79,25 @@ export default function Classes (props) {
     // console.log("The changeHandler is running.")
     getFilteredClasses(searchTerm);
   };
-  
   // -------------------- Side Effects -----------------
   useEffect(() => {
-    getAllClasses();
-  }, []); // populates allClasses on browser reload
+    axios.get('https://pt-fitness.herokuapp.com/classes')
+      .then(res => {
+ 
+        // console.log("All Classes ", res.data);
+        // console.log("Successful res back from Axios, res.data: ", res.data);
+
+        setAllClasses(res.data)
+        setFilteredClasses(res.data)
+
+      })
+      .catch(err => {
+        console.log("Error: ", err)
+        // history.push(`/error`)
+       alert("There was an error in loading classes.")
+       // debugger
+      })
+  }, [setAllClasses, setFilteredClasses]); // populates allClasses on browser reload
   
   useEffect(() => {
     gsap.to(".classes-content-container", {duration: 2, y: 30});
