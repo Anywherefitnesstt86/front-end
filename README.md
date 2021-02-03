@@ -83,3 +83,9 @@ import { Router, Route, Switch } from "react-router";
 
 > Greensock
 [x] npm install gsap react-gsap
+
+## TOOLS
+
+> Tiny JPEG
+https://tinyjpg.com/
+- to compress JPEGs to enhance performance
