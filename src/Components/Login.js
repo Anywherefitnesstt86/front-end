@@ -1,35 +1,36 @@
 import React from 'react'
 import TextInput from './TextInput.js'
-import axios from 'axios';
+// import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import './Login.css';
 
-const initialloginFormValues = {
-    email: '',
-    password: '',
-};
-const initialloginFormErrors = {
-    email: '',
-    password: '',
-};
+// const initialloginFormValues = {
+//     email: '',
+//     password: '',
+// };
+// const initialloginFormErrors = {
+//     email: '',
+//     password: '',
+// };
 
 function LoginForm (props) {
-    const {user, setUser, loginFormValues, setLoginFormValues, loginFormErrors, loginDisabled, setLoginDisabled} = props
+    const {loginFormValues, setLoginFormValues, loginDisabled} = props
+    // removed from props: user, setUser, loginFormErrors, setLoginDisabled, 
 
-    const history = useHistory();
+    // const history = useHistory();
 
-    const getLogin = (() => {
-        axios.get('https://pt-fitness.herokuapp.com/login')
-          .then(response => {
-            console.log(Object.values(response.data));
-          })
-          .catch(err => { console.log(err) });
-      })
+    // const getLogin = (() => {
+    //     axios.get('https://pt-fitness.herokuapp.com/login')
+    //       .then(response => {
+    //         console.log(Object.values(response.data));
+    //       })
+    //       .catch(err => { console.log(err) });
+    //   })
 
     const inputChange = (e) => {
-        const { name, type, value, checked } = e.target;
+        const { name, value } = e.target;
         // console.log(`name: ${name}, value: ${value}`);
         const inputValue = value;
         console.log("inputValue: ", inputValue)
@@ -61,9 +62,9 @@ function LoginForm (props) {
                     onChange = {inputChange}
                     value = {loginFormValues.email}
                     label = {"Email"}
-                    className = "type-input"
+                    className = "type-input-two"
                   />
-
+                  
                   <TextInput
                     type = "text"
                     name = "password"
@@ -71,7 +72,7 @@ function LoginForm (props) {
                     onChange = {inputChange}
                     value = {loginFormValues.password}
                     label = {"Password"}
-                    className = "type-input"
+                    className = "type-input-two"
                   />
                   <br/>
                   <br/>

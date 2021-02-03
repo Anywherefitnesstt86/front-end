@@ -11,15 +11,15 @@ import { gsap } from "gsap";
 
 
 export default function Classes (props) {
-  const { allClasses, setAllClasses, filteredClasses, setFilteredClasses, searchTerm, setSearchTerm } = props;
+  const { allClasses, setAllClasses, filteredClasses, setFilteredClasses, setSearchTerm } = props;
   
   // ------------ populate class data with backend data------------------
  function getAllClasses() {
     axios.get('https://pt-fitness.herokuapp.com/classes')
       .then(res => {
  
-        console.log("All Classes ", res.data);
-        console.log("Successful res back from Axios, res.data: ", res.data);
+        // console.log("All Classes ", res.data);
+        // console.log("Successful res back from Axios, res.data: ", res.data);
 
         setAllClasses(res.data)
         setFilteredClasses(res.data)
@@ -28,8 +28,8 @@ export default function Classes (props) {
       .catch(err => {
         console.log("Error: ", err)
         // history.push(`/error`)
-        alert("There was an error in loading classes.")
-        debugger
+       // alert("There was an error in loading classes.")
+       // debugger
       })
   } // populates classes state
 
@@ -83,11 +83,11 @@ export default function Classes (props) {
   // -------------------- Side Effects -----------------
   useEffect(() => {
     getAllClasses();
-  }, []); // populates allClasses on browser reload
+  }); // populates allClasses on browser reload
   
   useEffect(() => {
     gsap.to(".classes-content-container", {duration: 2, y: 30});
-  }, [".newUserForm-title"]);
+  }, []);
 
 
   return (
@@ -114,7 +114,8 @@ export default function Classes (props) {
         <div className="classes-container">
             {
               filteredClasses.map(indivClass => {
-                return <Class key={indivClass.id} indivClass={indivClass} />
+                const classKey = Math.random().toString(16).slice(2);
+                return <Class key={classKey} indivClass={indivClass} />
               })
             }
         </div>
