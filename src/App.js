@@ -99,7 +99,7 @@ function App() {
           />
 
       {/* Route to User Login Form  */}
-        <LoginForm
+        {/* <LoginForm
           user={user}
           setUser={setUser}
           loginFormValues={loginFormValues}
@@ -108,7 +108,7 @@ function App() {
           setLoginFormErrors={setLoginFormErrors}
           loginDisabled={loginDisabled}
           setLoginDisabled={setLoginDisabled}
-        />
+        /> */}
       {/* Route to view Classes  */}
       <Classes
         allClasses={allClasses}
