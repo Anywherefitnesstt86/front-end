@@ -5,7 +5,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-color: #777777;
-  height: 250vh;
+  height: 450vh;
   width: 100vw;
   display:flex;
   justify-content: center;
@@ -67,7 +67,7 @@
   .classes-background {
     /* background-position: -130px; */
     width: 100vw;
-    height: 400vh;
+    height: 450vh;
   }
 
   .classes-content-container {
@@ -110,3 +110,15 @@
   }
 
 }
+
+ /* tablet */
+ @media only screen and (min-width: 768px) {
+
+  .classes-background {
+
+    height: 500vh;
+  }
+
+}
+
+

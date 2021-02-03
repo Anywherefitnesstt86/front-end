@@ -111,8 +111,6 @@ function NewUserForm (props) {
     gsap.to(".newUserForm-container", {duration: 2, y: 30});
   }, []);
 
-  // gsap.to(".background-newUserForm", {duration: 2, x: 300});
-
   return (
     <>
         <Header/>
