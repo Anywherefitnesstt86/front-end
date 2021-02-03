@@ -1,6 +1,6 @@
 import React from 'react'
 import TextInput from './TextInput.js'
-// import axios from 'axios';
+import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
 // import { useHistory } from 'react-router-dom';
@@ -21,13 +21,13 @@ function LoginForm (props) {
 
     // const history = useHistory();
 
-    // const getLogin = (() => {
-    //     axios.get('https://pt-fitness.herokuapp.com/login')
-    //       .then(response => {
-    //         console.log(Object.values(response.data));
-    //       })
-    //       .catch(err => { console.log(err) });
-    //   })
+    const getLogin = (() => {
+        axios.post('https://pt-fitness.herokuapp.com/login')
+          .then(response => {
+            console.log(Object.values(response.data));
+          })
+          .catch(err => { console.log("error:", err) });
+      })
 
     const inputChange = (e) => {
         const { name, value } = e.target;
@@ -45,7 +45,7 @@ function LoginForm (props) {
             password: loginFormValues.password,
         }
         console.log(login);
-
+        getLogin(login)
     }
     
     return (
