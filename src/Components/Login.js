@@ -47,7 +47,6 @@ function LoginForm (props) {
         }
         console.log(login);
         getLogin(login)
-
     }
     
     return (
