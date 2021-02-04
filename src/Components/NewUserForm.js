@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import TextInput from './TextInput.js';
 import axios from 'axios';
-// import * as yup from 'yup';
-// import { useHistory } from 'react-router-dom';
+import * as yup from 'yup';
+import { useHistory } from 'react-router-dom';
 import './newUserForm.css';
 
-// import schema from './formSchema.js';
+import schema from './newUserFormSchema.js';
 import Header from './Header';
 import Footer from './Footer';
-
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import { gsap } from "gsap";
 
 
@@ -28,11 +29,22 @@ const initialNewUserFormValues = {
 // };
 
 
-function NewUserForm (props) {
-  const { setUser, newUserFormValues, setNewUserFormValues, newUserFormErrors,newUserDisabled } = props
-  // take out of props: setNewUserFormErrors, setNewUserDisabled
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
+}));
 
-  // const history = useHistory();
+function NewUserForm (props) {
+  const { setUser, newUserFormValues, setNewUserFormValues, setNewUserDisabled, newUserFormErrors, newUserDisabled, setNewUserFormErrors } = props
+  // take out of props: ,
+
+  const history = useHistory();
+
+  const classes = useStyles();
 
   // -------------------- Helper Functions -----------------
 
@@ -45,8 +57,7 @@ function NewUserForm (props) {
 
         setNewUserFormValues(initialNewUserFormValues); // reset form
         alert("Congratulations!  You have logged in!")
-        // history.push(`/`); // route to home page
-
+        history.push(`/`)
       })
       .catch(err => {
         console.log("Error: ", err)
@@ -56,15 +67,15 @@ function NewUserForm (props) {
       })
   } // posts and resets form
 
-  // const validate = (name, value) => {
-  // console.log("validate: ", name, value)
-  // // yup.reach(schema, name)
-  // //   .validate(value)
-  // //   .then(() => setNewUserFormErrors({ ...newUserFormErrors, [name]: ''}))
-  // //   .catch(err => setNewUserFormErrors({ ...newUserFormErrors, [name]: err.errors[0] })) // pending schema
+  const validate = (name, value) => {
+  console.log("validate: ", name, value)
+  yup.reach(schema, name)
+    .validate(value)
+    .then(() => setNewUserFormErrors({ ...newUserFormErrors, [name]: ''}))
+    .catch(err => setNewUserFormErrors({ ...newUserFormErrors, [name]: err.errors[0] })) // pending schema
 
-  //   console.log("passes form validation")
-  // }; // run validation with yup
+    console.log("passes form validation")
+  }; // run validation with yup
 
   // -------------------- Event Handlers -----------------
 
@@ -73,7 +84,7 @@ function NewUserForm (props) {
     console.log(`name: ${name}, value: ${value}`);
     const inputValue = type === 'checkbox' ? checked : value;  // option to include checkbox
     console.log("inputValue: ", inputValue)
-    // validate(name, inputValue);
+    validate(name, inputValue);
     setNewUserFormValues({ ...newUserFormValues, [name]: inputValue }); // [ ] is not an array
   } 
 
@@ -93,23 +104,23 @@ function NewUserForm (props) {
       console.log("new user: ", newUser)
       postNewUser(newUser) // post new user using helper function postNewUser
 
-      // history.push(`/`); // back to home page
+      history.push(`/`); // back to home page
   };
 
   // -------------------- Side Effects -----------------
 
   useEffect(() => {
-    // schema.isValid(newUserFormValues).then(valid => setNewUserDisabled(!valid)) // pending schema
-    // console.log("disabled?")
-    }, [newUserFormValues]); // Adjust the status of 'disabled" every time formValues changes
+    schema.isValid(newUserFormValues).then(valid => setNewUserDisabled(!valid)) // pending schema
+    console.log("Button is now enabled.")
+    }, [newUserFormValues, setNewUserDisabled]); // Adjust the status of 'disabled" every time formValues changes
 
-  // useEffect(() => {
-  //   console.log("The form Errors have changed", newUserFormErrors)
-  // }, [newUserFormErrors]);
+  useEffect(() => {
+    console.log("The form Errors have changed", newUserFormErrors)
+  }, [newUserFormErrors, setNewUserFormErrors]); // render form errors
 
   useEffect(() => {
     gsap.to(".newUserForm-container", {duration: 2, y: 30});
-  }, []);
+  }, []); // animation on form
 
   return (
     <>
@@ -130,7 +141,7 @@ function NewUserForm (props) {
                 value={newUserFormValues.personName}
                 label={"Name"}
               />
-              <div>{newUserFormErrors.personName}</div>
+              <div style={{color: "red", fontSize: "16px"}}>{newUserFormErrors.personName}</div>
 
               <TextInput
                 type="text"
@@ -140,7 +151,7 @@ function NewUserForm (props) {
                 value={newUserFormValues.email}
                 label={"Email"}
               />
-              <div>{newUserFormErrors.email}</div>
+              <div style={{color: "red", fontSize: "16px"}}>{newUserFormErrors.email}</div>
 
               <TextInput
                 type="text"
@@ -150,12 +161,12 @@ function NewUserForm (props) {
                 value={newUserFormValues.password}
                 label={"Password"}
               />
-              <div>{newUserFormErrors.password}</div>
+              <div style={{color: "red", fontSize: "16px"}}>{newUserFormErrors.password}</div>
 
               <div className='newUserForm-radio'>
               <input type="radio" name="isOverEighteen" onChange={inputChange} value={true}/>Are you over 18 years of age?
               </div>
-              <div>{newUserFormErrors.isOverEighteen}</div>
+              <div style={{color: "red", fontSize: "16px"}}>{newUserFormErrors.isOverEighteen}</div>
     
 
               <div className='newUserForm-slider'>
@@ -187,7 +198,10 @@ function NewUserForm (props) {
 
               <br/>
               <br/>
-              <button  id="submitBtn" disabled={newUserDisabled}>Submit</button> 
+
+              <Button variant="contained" size="large" color="primary" id="submitBtn" disabled={newUserDisabled} onClick={formSubmit} className={classes.margin}>
+              Submit
+              </Button>
 
           </form>
           </div>

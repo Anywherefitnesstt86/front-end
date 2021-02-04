@@ -3,6 +3,24 @@
 
 
 /* -----------------header--------------- */
+.header-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.nav-buttons {
+  display: flex;
+  align-self: center;
+  margin: 1rem;
+  /* border: red 2px solid; */
+  width: 25vw;
+  justify-content: space-between;
+}
+
+.header-button {
+  margin: 1rem;
+}
 .header-title {
   margin-left: 2rem;
 }

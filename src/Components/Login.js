@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TextInput from './TextInput.js'
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
 // import { useHistory } from 'react-router-dom';
 import './Login.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { gsap } from "gsap";
+
 
 // const initialloginFormValues = {
 //     email: '',
@@ -15,11 +19,22 @@ import './Login.css';
 //     password: '',
 // };
 
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+    backgroundColor: "green",
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
+}));
+
 function LoginForm (props) {
     const {loginFormValues, setLoginFormValues, loginDisabled} = props
     // removed from props: user, setUser, loginFormErrors, setLoginDisabled, 
 
     // const history = useHistory();
+    const classes = useStyles();
 
     const getLogin = (() => {
         axios.get('https://pt-fitness.herokuapp.com/login')
@@ -49,6 +64,10 @@ function LoginForm (props) {
         getLogin(login)
     }
     
+    useEffect(() => {
+      gsap.to(".loginUserForm", {duration: 2, y: 30});
+    }, []);
+
     return (
     <>
       <Header/>
@@ -77,7 +96,12 @@ function LoginForm (props) {
                   />
                   <br/>
                   <br/>
-                  <button  id="submitBtn2" loginDisabled={loginDisabled}>Submit</button> 
+                  {/* <button  id="submitBtn2" loginDisabled={loginDisabled}>Submit</button>  */}
+
+                  <Button variant="contained" size="large" color="primary" id="submitBtn2" loginDisabled={loginDisabled} className={classes.margin}>
+                  Submit
+                  </Button>
+
               </form>
           </div>
       <Footer/>

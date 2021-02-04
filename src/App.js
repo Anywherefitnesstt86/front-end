@@ -95,48 +95,47 @@ function App() {
           newUserFormValues={newUserFormValues} 
           setNewUserFormValues={setNewUserFormValues} 
           newUserFormErrors={newUserFormErrors} 
-          newUsersetFormErrors={setNewUserFormErrors} 
+          setNewUserFormErrors={setNewUserFormErrors} 
           newUserDisabled={newUserDisabled} 
           setNewUserDisabled={setNewUserDisabled} 
           />
       </Route>
 
         <Route path='/users'>
-        <LoginForm
-          user={user}
-          setUser={setUser}
-          loginFormValues={loginFormValues}
-          setLoginFormValues={setLoginFormValues}
-          loginFormErrors={loginFormErrors}
-          setLoginFormErrors={setLoginFormErrors}
-          loginDisabled={loginDisabled}
-          setLoginDisabled={setLoginDisabled}
-        />
+          <LoginForm
+            user={user}
+            setUser={setUser}
+            loginFormValues={loginFormValues}
+            setLoginFormValues={setLoginFormValues}
+            loginFormErrors={loginFormErrors}
+            setLoginFormErrors={setLoginFormErrors}
+            loginDisabled={loginDisabled}
+            setLoginDisabled={setLoginDisabled}
+          />
         </Route>
 
       <Route path='/classes'>
-      <Classes
-        allClasses={allClasses}
-        setAllClasses={setAllClasses}
-        filteredClasses={filteredClasses}
-        setFilteredClasses={setFilteredClasses}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-      />
-      </Route>
-      {/* Route to view Class  */}
-      <Route exact path='/'>
-        <h1>HomePage</h1>
-      <LoginForm
-          user={user}
-          setUser={setUser}
-          loginFormValues={loginFormValues}
-          setLoginFormValues={setLoginFormValues}
-          loginFormErrors={loginFormErrors}
-          setLoginFormErrors={setLoginFormErrors}
-          loginDisabled={loginDisabled}
-          setLoginDisabled={setLoginDisabled}
+        <Classes
+          allClasses={allClasses}
+          setAllClasses={setAllClasses}
+          filteredClasses={filteredClasses}
+          setFilteredClasses={setFilteredClasses}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
         />
+      </Route>
+ 
+      <Route exact path='/'>
+        <LoginForm
+            user={user}
+            setUser={setUser}
+            loginFormValues={loginFormValues}
+            setLoginFormValues={setLoginFormValues}
+            loginFormErrors={loginFormErrors}
+            setLoginFormErrors={setLoginFormErrors}
+            loginDisabled={loginDisabled}
+            setLoginDisabled={setLoginDisabled}
+          />
       </Route>
 
       </Switch>
