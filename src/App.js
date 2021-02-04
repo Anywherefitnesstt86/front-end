@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
 import LoginForm from './Components/Login';
 import Classes from './Components/Classes';
+import Class from './Components/Class';
 import {Route, Switch} from 'react-router-dom';
 
 // import Class from './Components/Class';
@@ -114,7 +115,7 @@ function App() {
         />
       </Route>
 
-      <Route path='/classes'>
+      <Route exact path='/classes'>
         <Classes
           allClasses={allClasses}
           setAllClasses={setAllClasses}
@@ -122,6 +123,12 @@ function App() {
           setFilteredClasses={setFilteredClasses}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
+        />
+      </Route>
+
+      <Route exact path='/classes/:classId'>
+        <Class
+          allClasses={allClasses}
         />
       </Route>
  
