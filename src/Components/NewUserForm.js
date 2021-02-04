@@ -104,7 +104,7 @@ function NewUserForm (props) {
       console.log("new user: ", newUser)
       postNewUser(newUser) // post new user using helper function postNewUser
 
-      history.push(`/`); // back to home page
+      history.push(`/classes`); // back to home page
   };
 
   // -------------------- Side Effects -----------------
