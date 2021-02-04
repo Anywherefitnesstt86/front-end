@@ -22,11 +22,12 @@ function LoginForm (props) {
     // const history = useHistory();
 
     const getLogin = (() => {
-        axios.post('https://pt-fitness.herokuapp.com/login')
+        axios.get('https://pt-fitness.herokuapp.com/login')
           .then(response => {
+            console.log("response: ", response)
             console.log(Object.values(response.data));
           })
-          .catch(err => { console.log("error:", err) });
+          .catch(err => { console.log(err) });
       })
 
     const inputChange = (e) => {
