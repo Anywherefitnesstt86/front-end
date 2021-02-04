@@ -101,18 +101,18 @@ function App() {
           />
       </Route>
 
-        <Route path='/users'>
-          <LoginForm
-            user={user}
-            setUser={setUser}
-            loginFormValues={loginFormValues}
-            setLoginFormValues={setLoginFormValues}
-            loginFormErrors={loginFormErrors}
-            setLoginFormErrors={setLoginFormErrors}
-            loginDisabled={loginDisabled}
-            setLoginDisabled={setLoginDisabled}
-          />
-        </Route>
+      <Route path='/users'>
+        <LoginForm
+          user={user}
+          setUser={setUser}
+          loginFormValues={loginFormValues}
+          setLoginFormValues={setLoginFormValues}
+          loginFormErrors={loginFormErrors}
+          setLoginFormErrors={setLoginFormErrors}
+          loginDisabled={loginDisabled}
+          setLoginDisabled={setLoginDisabled}
+        />
+      </Route>
 
       <Route path='/classes'>
         <Classes
@@ -126,16 +126,16 @@ function App() {
       </Route>
  
       <Route exact path='/'>
-        <LoginForm
-            user={user}
-            setUser={setUser}
-            loginFormValues={loginFormValues}
-            setLoginFormValues={setLoginFormValues}
-            loginFormErrors={loginFormErrors}
-            setLoginFormErrors={setLoginFormErrors}
-            loginDisabled={loginDisabled}
-            setLoginDisabled={setLoginDisabled}
-          />
+        <NewUserForm 
+            user={user} 
+            setUser={setUser} 
+            newUserFormValues={newUserFormValues} 
+            setNewUserFormValues={setNewUserFormValues} 
+            newUserFormErrors={newUserFormErrors} 
+            setNewUserFormErrors={setNewUserFormErrors} 
+            newUserDisabled={newUserDisabled} 
+            setNewUserDisabled={setNewUserDisabled} 
+            />
       </Route>
 
       </Switch>
