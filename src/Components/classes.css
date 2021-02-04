@@ -60,11 +60,9 @@
 @media only screen and (max-width: 492px) {
   .classes-background {
     /* background-position: -130px; */
-    /* width: 100vw;
-    height: 450vh; */
-
-    height: 120vh;
     width: 100vw;
+    height: 450vh;
+
   }
 
   .classes-content-container {
