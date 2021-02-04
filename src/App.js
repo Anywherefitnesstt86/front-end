@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
 import LoginForm from './Components/Login';
 import Classes from './Components/Classes';
+import {Route, Switch} from 'react-router-dom';
+
 // import Class from './Components/Class';
 // import Header from './Components/Header';
 // import Footer from './Components/Footer';
@@ -85,8 +87,8 @@ function App() {
 
   return (
     <div className="App">
-
-      {/* Route to Create New User Form */}
+      <Switch>
+      <Route path='/login'>
         <NewUserForm 
           user={user} 
           setUser={setUser} 
@@ -97,9 +99,10 @@ function App() {
           newUserDisabled={newUserDisabled} 
           setNewUserDisabled={setNewUserDisabled} 
           />
+      </Route>
 
-      {/* Route to User Login Form  */}
-        {/* <LoginForm
+        <Route path='/users'>
+        <LoginForm
           user={user}
           setUser={setUser}
           loginFormValues={loginFormValues}
@@ -108,8 +111,10 @@ function App() {
           setLoginFormErrors={setLoginFormErrors}
           loginDisabled={loginDisabled}
           setLoginDisabled={setLoginDisabled}
-        /> */}
-      {/* Route to view Classes  */}
+        />
+        </Route>
+
+      <Route path='/classes'>
       <Classes
         allClasses={allClasses}
         setAllClasses={setAllClasses}
@@ -118,11 +123,23 @@ function App() {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-
+      </Route>
       {/* Route to view Class  */}
+      <Route exact path='/'>
+        <h1>HomePage</h1>
+      <LoginForm
+          user={user}
+          setUser={setUser}
+          loginFormValues={loginFormValues}
+          setLoginFormValues={setLoginFormValues}
+          loginFormErrors={loginFormErrors}
+          setLoginFormErrors={setLoginFormErrors}
+          loginDisabled={loginDisabled}
+          setLoginDisabled={setLoginDisabled}
+        />
+      </Route>
 
-      {/* Route to Homepage */}
-
+      </Switch>
     </div>
   );
 }
