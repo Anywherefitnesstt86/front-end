@@ -1,12 +1,13 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
 import NewUserForm from './Components/NewUserForm';
 // import Header from './Components/Header';
 import Classes from './Components/Classes';
 import Class from './Components/Class';
-import LandingPage from './Components/LandingPage';
-
+import {Route, Switch} from 'react-router-dom';
+import { Inline } from './Components/LandingPage';
+import LoginForm from './Components/Login';
 
   // -------------------------- INITIAL STATES ------------------------
 
@@ -84,9 +85,8 @@ function App() {
 
   return (
     <div className="App">
-      <LandingPage />
-      {/* Route to Create New User Form */}
-        {/* <Header/> */}
+      <Switch>
+      <Route path='/signup'>
         <NewUserForm 
           user={user} 
           setUser={setUser} 
@@ -97,23 +97,37 @@ function App() {
           newUserDisabled={newUserDisabled} 
           setNewUserDisabled={setNewUserDisabled} 
           />
+      </Route>
 
-      {/* Route to User Login Form  */}
+        <Route path='/login'>
+        <LoginForm
+          user={user}
+          setUser={setUser}
+          loginFormValues={loginFormValues}
+          setLoginFormValues={setLoginFormValues}
+          loginFormErrors={loginFormErrors}
+          setLoginFormErrors={setLoginFormErrors}
+          loginDisabled={loginDisabled}
+          setLoginDisabled={setLoginDisabled}
+        />
+        </Route>
 
-      {/* Route to view Classes  */}
+      <Route path='/classes'>
       <Classes
         allClasses={allClasses}
-        setClasses={setAllClasses}
+        setAllClasses={setAllClasses}
         filteredClasses={filteredClasses}
         setFilteredClasses={setFilteredClasses}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-
+      </Route>
       {/* Route to view Class  */}
+      <Route exact path='/'>
+        <Inline />
+      </Route>
 
-      {/* Route to Homepage */}
-
+      </Switch>
     </div>
   );
 }

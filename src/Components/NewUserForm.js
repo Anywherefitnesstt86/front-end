@@ -3,6 +3,7 @@ import TextInput from './TextInput.js';
 import axios from 'axios';
 import * as yup from 'yup';
 import { useHistory } from 'react-router-dom';
+//import { connect } from 'react-redux';
 import './newUserForm.css';
 
 // import schema from './formSchema.js';
@@ -26,7 +27,7 @@ const initialNewUserFormErrors = {
 };
 
 
-function NewUserForm (props) {
+ function NewUserForm (props) {
   const { user, setUser, newUserFormValues, setNewUserFormValues, newUserFormErrors, setNewUserFormErrors, newUserDisabled, setNewUserDisabled } = props
 
   const history = useHistory();  
@@ -192,4 +193,15 @@ function NewUserForm (props) {
   )
 }
 
-export default NewUserForm;
+// const mapStatetoProps = state => {
+//   return {
+//     user: state.user, 
+//     newUserFormValues: state.newUserFormValues, 
+//     newUserFormErrors: state.newUserFormErrors,  
+//     newUserDisabled: state.newUserDisabled
+//   }
+
+// }
+// export default connect(mapStatetoProps)(NewUserForm);
+
+export default NewUserForm; 
